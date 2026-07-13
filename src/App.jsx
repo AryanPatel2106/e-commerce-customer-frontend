@@ -22,6 +22,9 @@ import Profile
 import Product
   from "./pages/Product";
 
+import Cart
+  from "./pages/Cart.jsx";
+
 import {
   ProtectedRoute,
 } from "./components/ProtectedRoute.jsx";
@@ -125,6 +128,13 @@ function App() {
           path="/product/:productId"
           element={
             <Product />
+          }
+        />
+
+        <Route
+          path="/cart"
+          element={
+            <Cart />
           }
         />
 

@@ -438,6 +438,28 @@ function Navbar() {
                         Settings
                     </button>
 
+                    <button
+                        onClick={() => {
+
+                            navigate(
+                                "/cart"
+                            );
+
+                            setIsMenuOpen(
+                                false
+                            );
+
+                        }}
+                        className="
+                            px-6
+                            py-4
+                            text-left
+                            hover:bg-slate-100
+                        "
+                    >
+                        Cart
+                    </button>
+
                 </div>
 
             </div>

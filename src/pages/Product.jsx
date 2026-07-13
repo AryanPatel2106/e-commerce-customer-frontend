@@ -48,6 +48,28 @@ function Product() {
         setError,
     ] = useState("");
 
+    const addToCart = async () => {
+        try{
+            setLoading(true);
+            setError("");
+            const response =
+                    await api.post(
+                        `/customer/cart/${productId}`
+                    );
+
+        } catch (error) {
+            setError(
+                error?.response
+                ?.data
+                ?.message ||
+                "Unable to add product to cart"
+            );
+        } finally {
+            setLoading(false);
+        }
+
+    }
+
     useEffect(() => {
 
         const getProduct = async () => {
@@ -523,6 +545,9 @@ function Product() {
 
                             <button
                                 type="button"
+                                onClick={
+                                    addToCart
+                                }
                                 className="
                                     flex-1
                                     rounded-lg
