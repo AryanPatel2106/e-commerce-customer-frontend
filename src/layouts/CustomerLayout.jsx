@@ -1,25 +1,15 @@
-import {
-    Outlet,
-} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-import Navbar
-    from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
 function CustomerLayout() {
-    return (
-        <div
-            className="
-                min-h-screen
-                bg-slate-100
-            "
-        >
+  return (
+    <div className="min-h-screen bg-slate-100">
+      <Navbar />
 
-            <Navbar />
-
-            <Outlet />
-
-        </div>
-    );
+      <Outlet />
+    </div>
+  );
 }
 
 export default CustomerLayout;
